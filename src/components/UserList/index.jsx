@@ -43,38 +43,6 @@ function UserList({ refreshKey }) {
               }}
             >
               <ListItemText primary={`${item.first_name} ${item.last_name}`} />
-              <Box sx={{ display: "flex", gap: 0.5, ml: 1 }}>
-                {/* Bubble xanh: số ảnh */}
-                <Chip
-                  label={item.photoCount ?? 0}
-                  size="small"
-                  sx={{
-                    backgroundColor: "#4caf50",
-                    color: "white",
-                    fontWeight: "bold",
-                    minWidth: 28,
-                  }}
-                  onClick={(e) => {
-                    e.preventDefault();
-                    navigate(`/photos/${item._id}`);
-                  }}
-                />
-                {/* Bubble đỏ: số comment*/}
-                <Chip
-                  label={item.commentCount ?? 0}
-                  size="small"
-                  sx={{
-                    backgroundColor: "#f44336",
-                    color: "white",
-                    fontWeight: "bold",
-                    minWidth: 28,
-                  }}
-                  onClick={(e) => {
-                    e.preventDefault();
-                    navigate(`/comments/${item._id}`);
-                  }}
-                />
-              </Box>
             </ListItem>
             <Divider />
           </React.Fragment>
