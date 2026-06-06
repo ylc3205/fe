@@ -1,24 +1,9 @@
 import React from "react";
-import {
-  AppBar,
-  Toolbar,
-  Typography,
-  Button,
-  Box,
-  Checkbox,
-  FormControlLabel,
-} from "@mui/material";
+import { AppBar, Toolbar, Typography, Button, Box } from "@mui/material";
 import fetchModel from "../../lib/fetchModelData";
 import { useNavigate } from "react-router-dom";
 
-function TopBar({
-  currentUser,
-  onLogout,
-  topBarContext,
-  advancedFeature,
-  setAdvancedFeature,
-  onUploadSuccess,
-}) {
+function TopBar({ currentUser, onLogout, topBarContext, onUploadSuccess }) {
   const navigate = useNavigate();
 
   // Hàm xử lý khi người dùng chọn file ảnh
@@ -61,23 +46,6 @@ function TopBar({
         </Typography>
 
         <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
-          {currentUser && (
-            <FormControlLabel
-              control={
-                <Checkbox
-                  checked={advancedFeature}
-                  onChange={(e) => setAdvancedFeature(e.target.checked)}
-                  sx={{ color: "white", "&.Mui-checked": { color: "white" } }}
-                  size="small"
-                />
-              }
-              label={
-                <Typography variant="body2" color="white">
-                  Enable Advanced Features
-                </Typography>
-              }
-            />
-          )}
           {currentUser && (
             <>
               <input
