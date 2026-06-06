@@ -1,4 +1,3 @@
-import "./App.css";
 import React, { useState } from "react";
 import { Grid, Paper } from "@mui/material";
 import { Route, Routes, Navigate, useNavigate } from "react-router-dom";
@@ -8,7 +7,6 @@ import UserDetail from "./components/UserDetail";
 import UserList from "./components/UserList";
 import UserPhotos from "./components/UserPhotos";
 import LoginRegister from "./components/LoginRegister";
-import UserComments from "./components/UserComments";
 
 const App = (props) => {
   const [advancedFeature, setAdvancedFeature] = useState(false);
@@ -143,12 +141,12 @@ const App = (props) => {
                       />
                     }
                   />
-                  <Route
+                  {/* <Route
                     path="/comments/:userId"
                     element={
                       <UserComments setTopBarContext={setTopBarContext} />
                     }
-                  />
+                  /> */}
                   <Route
                     path="/login"
                     element={<Navigate to={`/`} replace />}

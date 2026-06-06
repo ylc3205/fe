@@ -5,12 +5,8 @@ import {
   ListItem,
   ListItemText,
   Typography,
-  Chip,
-  Box,
 } from "@mui/material";
-import { Link, useNavigate } from "react-router-dom";
-
-import "./styles.css";
+import { Link } from "react-router-dom";
 import fetchModel from "../../lib/fetchModelData";
 
 /**
@@ -18,7 +14,6 @@ import fetchModel from "../../lib/fetchModelData";
  */
 function UserList({ refreshKey }) {
   const [users, setUsers] = useState([]);
-  const navigate = useNavigate();
 
   useEffect(() => {
     fetchModel("/user/list")

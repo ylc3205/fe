@@ -1,6 +1,6 @@
 import axios from "axios";
 
-export const BASE_URL = "https://kmkqpx-8081.csb.app/api";
+export const BASE_URL = "https://qg85xy-8081.csb.app/api";
 
 async function fetchModel(url, options = {}) {
   try {

@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { TextField, Button, Typography, Grid, Paper, Box } from "@mui/material";
 import fetchModel from "../../lib/fetchModelData";
-import "./styles.css";
 
 function LoginRegister({ onLoginSuccess }) {
   const [isLoginView, setIsLoginView] = useState(true);
@@ -146,12 +145,17 @@ function LoginRegister({ onLoginSuccess }) {
 
             <Typography className="auth-toggle-text" variant="body2">
               Bạn chưa có tài khoản?{" "}
-              <a
+              <span
                 className="auth-toggle-link"
+                style={{
+                  cursor: "pointer",
+                  color: "#1976d2",
+                  textDecoration: "underline",
+                }}
                 onClick={() => setIsLoginView(false)}
               >
                 Đăng ký ngay
-              </a>
+              </span>
             </Typography>
           </>
         ) : (
@@ -267,12 +271,17 @@ function LoginRegister({ onLoginSuccess }) {
 
             <Typography className="auth-toggle-text" variant="body2">
               Đã có tài khoản?{" "}
-              <a
+              <span
                 className="auth-toggle-link"
+                style={{
+                  cursor: "pointer",
+                  color: "#1976d2",
+                  textDecoration: "underline",
+                }}
                 onClick={() => setIsLoginView(true)}
               >
                 Quay lại đăng nhập
-              </a>
+              </span>
             </Typography>
           </>
         )}
