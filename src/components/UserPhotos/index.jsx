@@ -64,22 +64,6 @@ function UserPhotos({
     return <Typography>No photos...</Typography>;
   }
 
-  // enable advance
-  const currentIndex = photoId ? photos.findIndex((p) => p._id === photoId) : 0;
-  const currentPhoto = photos[currentIndex !== -1 ? currentIndex : 0];
-
-  const goNext = () => {
-    if (currentIndex < photos.length - 1) {
-      navigate(`/photos/${userId}/${photos[currentIndex + 1]._id}`);
-    }
-  };
-
-  const goPrev = () => {
-    if (currentIndex > 0) {
-      navigate(`/photos/${userId}/${photos[currentIndex - 1]._id}`);
-    }
-  };
-
   // them comment
   const handleAddComment = async (photoIdToComment) => {
     const text = newComments[photoIdToComment];
@@ -173,39 +157,7 @@ function UserPhotos({
     );
   };
 
-  return (
-    <div>
-      {advancedFeature ? (
-        <>
-          {renderPhoto(currentPhoto)}
-          <div
-            style={{
-              display: "flex",
-              justifyContent: "space-between",
-              marginTop: "10px",
-            }}
-          >
-            <Button
-              variant="contained"
-              disabled={currentIndex === 0}
-              onClick={goPrev}
-            >
-              Previous
-            </Button>
-            <Button
-              variant="contained"
-              disabled={currentIndex === photos.length - 1}
-              onClick={goNext}
-            >
-              Next
-            </Button>
-          </div>
-        </>
-      ) : (
-        photos.map((p) => renderPhoto(p))
-      )}
-    </div>
-  );
+  return <div>{photos.map((p) => renderPhoto(p))}</div>;
 }
 
 export default UserPhotos;
